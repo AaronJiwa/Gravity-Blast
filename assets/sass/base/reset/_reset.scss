@@ -6,14 +6,6 @@
  * As per: csswizardry.com/2011/10/reset-restarted
  */
 
-@if $global-border-box == true {
-
-    * {
-        @include border-box;
-    }
-    
-}
-
 /**
  * The usual...
  */

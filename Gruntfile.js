@@ -36,7 +36,8 @@ module.exports = function( grunt ) {
         },
         dist: {
             src: [
-              'assets/js/dist/*.js',
+              'assets/js/bower/**/*.js',
+              'assets/js/bower/*.js',
               'assets/js/classes/*.js',
               'assets/js/main.dev.js'
             ],
@@ -46,7 +47,7 @@ module.exports = function( grunt ) {
 
     bower: {
       dev: {
-        dest: 'assets/js'
+        dest: 'assets/js/bower'
       }
     },
 
@@ -81,7 +82,8 @@ module.exports = function( grunt ) {
       },
       js: {
         files: [
-          'assets/js/dist/*.js',
+          'assets/js/bower/**/*.js',
+          'assets/js/bower/*.js',
           'assets/js/classes/*.js',
           'assets/js/main.dev.js'
         ],

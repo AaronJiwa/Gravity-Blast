@@ -11,16 +11,7 @@
 	$SETUP
 \*------------------------------------*/
 /*------------------------------------*\
-	$DEBUG
-\*------------------------------------*/
-/*------------------------------------*\
-	$SETUP
-\*------------------------------------*/
-/*------------------------------------*\
 	$RESPONSIVENESS
-\*------------------------------------*/
-/*------------------------------------*\
-	$Z-INDEX Management
 \*------------------------------------*/
 /*------------------------------------*\
 	$BASE
@@ -34,9 +25,6 @@
 /*------------------------------------*\
 	$COLOURS
 \*------------------------------------*/
-/**
- * Generic colours
- */
 /*------------------------------------*\
     $CORE
 \*------------------------------------*/
@@ -48,13 +36,6 @@
  */
 /**
  * Mixins
- */
-/**
- * z-index management mixin uses the $z-layers sass-map in _config.scss
- * Stops developers randomly assigning z-index values
- * lets give everything a name.
- * 
- * @author Adam Bulmer
  */
 /**
  * Reset
@@ -1001,7 +982,7 @@ table {
 /**
  * The usual...
  */
-/* line 20, ../sass/base/reset/_reset.scss */
+/* line 12, ../sass/base/reset/_reset.scss */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 dl, dd, ol, ul,
@@ -1015,7 +996,7 @@ hr {
 /**
  * Remove vertical spacing from nested lists.
  */
-/* line 34, ../sass/base/reset/_reset.scss */
+/* line 26, ../sass/base/reset/_reset.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
@@ -1024,7 +1005,7 @@ li > ol {
 /**
  * Remove padding from nav ul's
  */
-/* line 43, ../sass/base/reset/_reset.scss */
+/* line 35, ../sass/base/reset/_reset.scss */
 nav ul,
 nav ol {
   padding-left: 0;
@@ -1033,7 +1014,7 @@ nav ol {
 /**
  * Give a help cursor to elements that give extra info on `:hover`.
  */
-/* line 51, ../sass/base/reset/_reset.scss */
+/* line 43, ../sass/base/reset/_reset.scss */
 abbr[title], dfn[title] {
   cursor: help;
 }
@@ -1041,7 +1022,7 @@ abbr[title], dfn[title] {
 /**
  * Remove underlines from potentially troublesome elements.
  */
-/* line 58, ../sass/base/reset/_reset.scss */
+/* line 50, ../sass/base/reset/_reset.scss */
 a, u, ins {
   text-decoration: none;
 }
@@ -1049,7 +1030,7 @@ a, u, ins {
 /**
  * Apply faux underline via `border-bottom`.
  */
-/* line 65, ../sass/base/reset/_reset.scss */
+/* line 57, ../sass/base/reset/_reset.scss */
 ins {
   border-bottom: 1px solid;
 }
@@ -1057,14 +1038,14 @@ ins {
 /**
  * Add italic for alt text and flexible media if set
  */
-/* line 72, ../sass/base/reset/_reset.scss */
+/* line 64, ../sass/base/reset/_reset.scss */
 img {
   display: block;
   font-style: italic;
   max-width: 100%;
   height: auto;
 }
-/* line 82, ../sass/base/reset/_reset.scss */
+/* line 74, ../sass/base/reset/_reset.scss */
 .not-flexible-media img {
   max-width: none;
 }
@@ -1072,7 +1053,7 @@ img {
 /**
  * Images in `figure` elements.
  */
-/* line 92, ../sass/base/reset/_reset.scss */
+/* line 84, ../sass/base/reset/_reset.scss */
 figure > img {
   display: block;
 }
@@ -1080,7 +1061,7 @@ figure > img {
 /**
  * Give form elements some cursor interactions...
  */
-/* line 100, ../sass/base/reset/_reset.scss */
+/* line 92, ../sass/base/reset/_reset.scss */
 label,
 input,
 textarea,
@@ -1090,7 +1071,7 @@ option {
   cursor: pointer;
 }
 
-/* line 108, ../sass/base/reset/_reset.scss */
+/* line 100, ../sass/base/reset/_reset.scss */
 .text-input:active,
 .text-input:focus,
 textarea:active,

@@ -1,23 +1,11 @@
 /*------------------------------------*\
-	$DEBUG
-\*------------------------------------*/
-$debug-mode: false !default;
-
-/*------------------------------------*\
-	$SETUP
-\*------------------------------------*/
-$global-border-box: false !default;
-$old-ie:  false !default;
-
-/*------------------------------------*\
 	$RESPONSIVENESS
 \*------------------------------------*/
 $flexible-media: true !default;
 $mq-responsive: true !default;
 
 $mq-breakpoints: (
-
-	macro-smallest: 320px,
+	  macro-smallest: 320px,
     macro-small: 480px,
     macro-medium: 768px,
     macro-large: 1100px,
@@ -26,18 +14,6 @@ $mq-breakpoints: (
 ) !default;
 
 $mq-static-breakpoint: macro-large !default;
-
-/*------------------------------------*\
-	$Z-INDEX Management
-\*------------------------------------*/
-
-$z-layers: (
-  "default": 1,
-  "below": -1,
-  "layout-arrow": 10,
-  "facility-box-title": 10
-);
-
 
 /*------------------------------------*\
 	$BASE
@@ -55,10 +31,10 @@ $double-spacing-unit: $base-spacing-unit * 2;
 	$SUSY CONFIG
 \*------------------------------------*/
 
-$total-columns: 12;            		   // a 12-column grid
-$column-width: 70px;            	   // each column is 4em wide
-$gutter-width: $base-spacing-unit;	 // 1em gutters between columns
-$grid-padding: $double-spacing-unit; // wider grid padding to give the brand some space
+$total-columns: 12;            		   
+$column-width: 70px;            	   
+$gutter-width: $base-spacing-unit;	 
+$grid-padding: $double-spacing-unit;
 
 $susy: (
   columns: $total-columns,
@@ -66,15 +42,10 @@ $susy: (
   column-width: $column-width,
 );
 
-
-
 /*------------------------------------*\
 	$COLOURS
 \*------------------------------------*/
 
-/**
- * Generic colours
- */
 $white: rgb(255,255,255);
 $black: rgb(0,0,0);
 
