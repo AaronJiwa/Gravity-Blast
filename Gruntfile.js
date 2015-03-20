@@ -1,12 +1,5 @@
 module.exports = function( grunt ) {
 
-  // load tasks
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify' );
-  grunt.loadNpmTasks('grunt-bower');
-  grunt.loadNpmTasks('assemble');
 
     grunt.initConfig({
 
@@ -16,10 +9,21 @@ module.exports = function( grunt ) {
         options: {
           config: 'config.rb',
           outputStyle: 'expanded',
-          force: true
+          force: true,
+          watch: true
         }
       }
     },
+
+    concurrent: {
+        target: {
+            tasks: ['watch', 'compass'],
+            options: {
+                logConcurrentOutput: true
+            }
+        }
+    },
+
 
     //minify js
     uglify: {
@@ -73,13 +77,6 @@ module.exports = function( grunt ) {
 
     // watch our project for changes
     watch: {
-      compass: {
-        files: [
-          'assets/sass/*.scss',
-          'assets/sass/**/*.scss'
-        ],
-        tasks: [ 'compass' ]
-      },
       js: {
         files: [
           'assets/js/bower/**/*.js',
@@ -100,15 +97,26 @@ module.exports = function( grunt ) {
     },
 
   });
+
+  // load tasks
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-watch-nospawn');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify' );
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-bower');
+  grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-concurrent');
+
   
     // register task default task
   grunt.registerTask( 'default', function() {
+
        grunt.task.run([
         'bower',
-        'compass',
-        'concat',
-        'assemble',
-        'watch'
+        'newer:concat',
+        'newer:assemble',
+        'concurrent:target',
       ]);
   });
 
