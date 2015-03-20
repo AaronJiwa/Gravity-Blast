@@ -5,6 +5,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify' );
+  grunt.loadNpmTasks('grunt-bower');
   grunt.loadNpmTasks('assemble');
 
     grunt.initConfig({
@@ -35,11 +36,18 @@ module.exports = function( grunt ) {
         },
         dist: {
             src: [
-                'assets/js/src/classes/*.js',
-                'assets/js/src/main.dev.js'
+              'assets/js/dist/*.js',
+              'assets/js/classes/*.js',
+              'assets/js/main.dev.js'
             ],
             dest: 'assets/js/main.js'
         }
+    },
+
+    bower: {
+      dev: {
+        dest: 'assets/js'
+      }
     },
 
     //compile handlebars
@@ -73,16 +81,17 @@ module.exports = function( grunt ) {
       },
       js: {
         files: [
-          'assets/js/src/core/*.js',
-          'assets/js/src/plugins/*.js',
-          'assets/js/src/classes/*.js',
-          'assets/js/src/main.dev.js'
+          'assets/js/dist/*.js',
+          'assets/js/classes/*.js',
+          'assets/js/main.dev.js'
         ],
         tasks: ['concat']
       },
       hbs: {
         files: [
-          'assets/hbs/*.hbs'
+          'assets/hbs/layouts/*.hbs',
+          'assets/hbs/pages/*.hbs',
+          'assets/hbs/partials/*.hbs',
         ],
         tasks: ['assemble']
       }
@@ -93,6 +102,7 @@ module.exports = function( grunt ) {
     // register task default task
   grunt.registerTask( 'default', function() {
        grunt.task.run([
+        'bower',
         'compass',
         'concat',
         'assemble',
